@@ -11,6 +11,8 @@ gem 'rails', '4.1.7'
  
  group :development do
    gem 'sqlite3'
+   gem 'pry'
+   gem 'pry-byebug'
  end
 
 # Use SCSS for stylesheets
@@ -51,3 +53,5 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'faker'
 
 gem 'devise'
+
+gem 'figaro', '1.0'
