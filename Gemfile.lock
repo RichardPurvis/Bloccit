@@ -83,6 +83,8 @@ GEM
     pry-byebug (2.0.0)
       byebug (~> 3.4)
       pry (~> 0.10)
+    pundit (0.3.0)
+      activesupport (>= 3.0.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -159,6 +161,7 @@ DEPENDENCIES
   pg
   pry
   pry-byebug
+  pundit
   rails (= 4.1.7)
   rails_12factor
   sass-rails (~> 4.0.3)
