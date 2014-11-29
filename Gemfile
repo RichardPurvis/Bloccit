@@ -59,3 +59,9 @@ gem 'pundit'
 gem 'figaro', '1.0'
 
 gem 'redcarpet'
+
+gem 'carrierwave'
+
+gem 'mini_magick'
+
+gem 'fog'
