@@ -1,11 +1,9 @@
 module ApplicationHelper
+
  def form_group_tag(errors, &block)
-   if errors.any?
-     content_tag :div, capture(&block), class: 'form-group has-error'
-   else
-     content_tag :div, capture(&block), class: 'form-group'
-   end
+     content_tag :div, class: "form-group#{errors.any? ? ' has-error' : ''}", &block
  end
+
 
   def markdown(text)
     renderer = Redcarpet::Render::HTML.new
