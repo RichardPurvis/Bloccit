@@ -13,6 +13,7 @@ gem 'rails', '4.1.7'
    gem 'sqlite3'
    gem 'pry'
    gem 'pry-byebug'
+   gem 'rails-erd'
  end
 
 # Use SCSS for stylesheets
