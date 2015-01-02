@@ -1,8 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
-    @topic = Topic.find( params[:topic_id])
-    @post = @topic.posts.find(params[:post_id])
+    @post = Post.find(params[:post_id])
     @comments = @post.comments
 
     @comment = current_user.comments.build(comment_params)
@@ -19,10 +18,10 @@ class CommentsController < ApplicationController
     end
   end
 
-  # def new
-  #   @post = Post.find(params[:post_id])
-  #   @comment = Comment.new
-  # end
+  def new
+    @post = Post.find(params[:post_id])
+    @comment = Comment.new
+  end
 
   private
 
