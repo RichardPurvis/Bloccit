@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     resources :posts, except: [:index]
   end
 
-  resources :posts, only: [:index] do
-    resources :comments
+  resources :posts, except: [:index] do
+    resources :comments, only: [:create, :destroy]
   end
 
   get 'about' => 'welcome#about'
