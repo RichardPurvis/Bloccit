@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
 
+  resources :posts, only: [:index]
+  resources :topics do
+    resources :posts, except: [:index] do
+      resources :comments, only: [:create, :destroy]
+    end
+  end
+
   devise_for :users
   resources :users, only: [:show, :index, :update]
-
-  resources :topics do
-    resources :posts, except: [:index]
-  end
-
-  resources :posts, except: [:index] do
-    resources :comments, only: [:create, :destroy]
-  end
 
   get 'about' => 'welcome#about'
 
