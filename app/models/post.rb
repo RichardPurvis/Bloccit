@@ -12,6 +12,18 @@ class Post < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  def up_votes
+    votes.where(value: 1).count
+  end
+
+  def down_votes
+    votes.where(value: -1).count
+  end
+
+  def points
+    votes.sum(:value)
+  end
+
   def markdown_title
     render_as_markdown title
   end
