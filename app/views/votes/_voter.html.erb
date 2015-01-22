@@ -1,5 +1,7 @@
-<div>
-  <div><%= link_to " ", '#', class: 'glyphicon-chevron-up' %></div>
-  <div><strong><%= post.points %></strong></div>
-  <div><%= link_to " ", '#', class: 'glyphicon-chevron-down' %></div>
-</div>
+<% if policy(Vote.new).create? %>
+  <div class="pull-left vote-arrows">
+    <div><%= link_to "^", post_up_vote_path(post), method: :post %></div>
+    <div><strong><%= post.points %></strong></div>
+    <div><%= link_to "v", post_down_vote_path(post), method: :post %></div>
+  </div>
+  <% end %>
