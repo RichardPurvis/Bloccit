@@ -12,6 +12,8 @@ class Post < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  after_create :create_vote
+
   def up_votes
     votes.where(value: 1).count
   end
@@ -38,7 +40,7 @@ class Post < ActiveRecord::Base
 
     update_attribute(:rank, new_rank)
   end
-  
+
   private
 
   def render_as_markdown(text)
@@ -46,6 +48,10 @@ class Post < ActiveRecord::Base
     extensions = {fenced_code_blocks: true}
     redcarpet = Redcarpet::Markdown.new(renderer, extensions)
     (redcarpet.render text).html_safe
+  end
+
+  def create_vote
+    user.votes.create(value: 1, post: self)
   end
 
 end
