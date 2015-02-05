@@ -5,4 +5,6 @@ class Topic < ActiveRecord::Base
     #                            If user? Then: 'all', else: 'where(public: true)'
 
     scope :publicly_viewable, -> { where(public: true)}
+
+    scope :privately_viewable, -> { where(public: false)}
 end
