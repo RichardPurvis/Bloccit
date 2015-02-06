@@ -14,7 +14,7 @@ describe Comment do
 
     context "with user's permission" do
 
-      it "sends an email the users who have favorited the post" do
+      it "sends an email to the users who have favorited the post" do
         @user.favorites.where(post: @post).create
 
         allow( FavoriteMailer )
