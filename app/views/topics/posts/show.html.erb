@@ -14,7 +14,7 @@
 
   <h2><%= @comments.count %> Comments</h2>
 
-  <%= render @comments %>
+  <%= render partial: 'comments/comment', collection: @comments %>
 
   <% if (policy(@post).create?) &&  (current_user) %>
     <hr/>
