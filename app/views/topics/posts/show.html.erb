@@ -13,13 +13,16 @@
   <hr/>
 
   <h2><%= @comments.count %> Comments</h2>
-
-  <%= render partial: 'comments/comment', collection: @comments %>
+    <div class='js-comments'>
+    <%= render partial: 'comments/comment', collection: @comments %>
+    </div>
 
   <% if (policy(@post).create?) &&  (current_user) %>
     <hr/>
     <h4>New Comment</h4>
-    <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+    <div class='new-comment'>
+      <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+    </div>
   <% end %>
 
 
